@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS code_entity (
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(255) NOT NULL UNIQUE
+);
+INSERT INTO code_entity (code) VALUES ('a0a0');
