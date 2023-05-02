@@ -18,7 +18,7 @@ public class GenerateServiceImpl implements GenerateService {
     public String generateCode() {
         Optional<CodeEntity> codeEntity = codeRepository.findTopByOrderByCodeDesc();
         if (codeEntity.isEmpty()) {
-            throw new NullPointerException("No data in database");
+            throw new NullPointerException("No data in database.");
         }
         String nextCode = generateNextCode(codeEntity.get().getCode());
 
