@@ -36,7 +36,7 @@ public class GenerateServiceImpl implements GenerateService {
             if (codeBuilder.substring(index).matches(pattern)) {
                 index -= 2;
             } else {
-                if (code.charAt(index + 1) != '9') {
+                if (codeBuilder.charAt(index + 1) != '9') {
                     codeLast.append(codeBuilder.substring(0, index + 1));
                     codeLast.append((Integer.valueOf(String.valueOf(codeBuilder.charAt(index + 1))) + 1));
                     if (index + 1 != codeBuilder.length()) {
@@ -44,7 +44,7 @@ public class GenerateServiceImpl implements GenerateService {
                     }
                     return codeLast.toString();
                 }
-                if (code.charAt(index) != 'z') {
+                if (codeBuilder.charAt(index) != 'z') {
                     codeLast.append(codeBuilder.substring(0, index));
                     codeLast.append((char) (codeBuilder.charAt(index) + 1));
                     codeLast.append(0);
@@ -56,6 +56,6 @@ public class GenerateServiceImpl implements GenerateService {
 
             }
         }
-        return "a0".repeat((code.length() / 2) + 1);
+        return "a0".repeat((codeBuilder.length() / 2) + 1);
     }
 }
