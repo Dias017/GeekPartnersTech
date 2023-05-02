@@ -30,8 +30,8 @@ public class GenerateServiceImpl implements GenerateService {
         StringBuilder codeBuilder = new StringBuilder(code);
         StringBuilder codeLast = new StringBuilder();
         String pattern = "^[z9]+$";
-
         int index = codeBuilder.length() - 2;
+
         while (index >= 0) {
             if (codeBuilder.substring(index).matches(pattern)) {
                 index -= 2;
